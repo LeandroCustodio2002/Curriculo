@@ -1,248 +1,214 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leandro Custódio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#15181d">
+    <meta name="description" content="Portfólio de Leandro de Oliveira Custódio — desenvolvedor back-end (Java, Node.js, Python) com interesse em front-end e desenvolvimento de jogos.">
+    <title>Leandro Custódio — Desenvolvedor</title>
 
-    <!-- Icon -->
-    <link rel="shortcut icon" href="images/dev.png" type="image/x-icon"> 
+    <link rel="shortcut icon" href="images/dev.png" type="image/x-icon">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- FontAwesome-->
-    <script src="https://kit.fontawesome.com/587541520f.js" crossorigin="anonymous"></script>
-
-    <!-- Ion Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style/style.css">
+    <!-- Evita flash de tema claro antes do CSS/JS carregar -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/587541520f.js" crossorigin="anonymous" defer></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/style.css">
 </head>
-<body class="dark_change">
+<body>
+
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
     <!-- Navbar -->
-    <div class="nav dark_change">
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="#top">
+                <span class="brand__mark">LC</span>
+                <span class="brand__name">Leandro Custódio</span>
+            </a>
 
-       <ul>
-           <li><a href="#about">Home</a></li>
-           <li><a href="#contact">Contato</a></li>
-           <li><a href="#formations">Formações</a></li>
-           <li><a href="#tecnology">Tecnologias</a></li>
-           <li><a href="#projects">Projetos</a></li>
-           <ion-icon name="moon-outline" class="dark"></ion-icon>
-       </ul>
+            <nav class="nav" id="nav" aria-label="Navegação principal">
+                <ul class="nav__list">
+                    <li><a href="#about">Home</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#formations">Formações</a></li>
+                    <li><a href="#tecnology">Tecnologias</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                </ul>
+            </nav>
 
-    </div>
+            <div class="site-header__actions">
+                <button type="button" class="icon-btn" id="theme-toggle"
+                        aria-label="Alternar tema claro e escuro" aria-pressed="false">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
 
-
-    <!-- Wallpaper -->
-   <div class="wallpaper"></div>
-
-   <!-- Sobre Mim-->
-   <div class="about">
-   <div class="about-container dark_change" id="about">
-       <img src="images/foto2.jpg">
-        <div class="about-text">
-            
-            <h1>LEANDRO DE OLIVEIRA CUSTÓDIO <span>📌</span></h1>
-            <p> Olá, me chamo Leandro Custódio e sou um programador com forte interesse em arte. Há algum tempo, venho aprimorando meus conhecimentos e habilidades, tanto em tecnologia quanto nas áreas artísticas.
-                Tenho mais de um ano de experiência no mercado de trabalho como estagiário, atuando na empresa BTG Pactual, onde participei ativamente de diversos projetos, desde a implementação de APIs para web scraping até a manutenção de sistemas robustos em Spring Boot e Node.js.
-            </p>
-            <p>
-                Minha principal linguagem de programação é Java, que foi a que mais utilizei tanto no ambiente corporativo quanto em projetos acadêmicos. Além disso, já trabalhei com Python e JavaScript em diversos projetos.
-                Embora minha experiência principal seja em Backend, também tenho grande interesse em Front-end, tendo criado sites e dashboards para projetos acadêmicos, pessoais e até mesmo para o BTG.
-            </p>
-            <p>
-                Meu objetivo principal é atuar no mercado de desenvolvimento de jogos. Tive a oportunidade de participar de alguns projetos bem-sucedidos na faculdade e atualmente estou desenvolvendo dois projetos próprios nessa área.
-                Além disso, sou apaixonado por arte 2D, modelagem 3D e game design.</p>
-            <a href="https://www.linkedin.com/in/leandro-custodio/"><button class="btn">Linkedin</button></a>
-            <a href="https://github.com/ImOutOfBounds"><button class="btn">Github</button></a>
-        </div>
-    </div>
-    </div>
-
-
-    <!-- Inicio Formations -->
-    <section class="formations" id="contact">
-
-        <h1 class="heading">Con<span>tato</span>📱</h1>
-
-
-        <div class="box-container">
-
-            <div class="box">
-                <i class="fas fa-solid fa-phone"></i>
-                <h3>Telefone <br> (11) 98233-4655</h3>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-solid fa-at"></i>
-                <h3 class="dark_change">E-mail</h3>
-                <p>leandro.oliveiracustodio02@gmail.com</p>
-                
-            </div>
-
-
-        </div>
-    </section>
-
-
-    <!-- Experiências academicas -->
-    <section class="formations" id="formations">
-
-        <h1 class="heading">For<span>mações</span>🎓</h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <i class="fas fa-solid fa-graduation-cap"></i>
-                <h3>Ciências da Computação <br> 2022 - 2025 / Inteli</h3>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-solid fa-graduation-cap"></i>
-                <h3>Programação em Java <br> 2021 / Instituto PROA</h3>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-solid fa-graduation-cap"></i>
-                <h3>Etim Edificações <br> 2018 - 2020 / Etec Itaquera II</h3>
-            </div>
-
-        </div>
-
-    </section>
-
-     
-      
-    <h1 class="heading space">Tec<span>nologias</span>💻</h1>
-
-   
-
-     <!-- Inicio icons "tecnologias utilizadas" -->
-     <section class="icons-container" id="tecnology">
-        
-        <div class="icons">
-           <img src="images/html.png" alt="html">
-            <div class="content">
-                <h3>HTML</h3>
+                <button type="button" class="icon-btn nav-toggle" id="nav-toggle"
+                        aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+                    <span class="nav-toggle__bars" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
+    </header>
 
-        <div class="icons">
-            <img src="images/css.png">
-            <div class="content">
-                <h3>CSS</h3>
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+
+    <main id="main">
+
+        <!-- Hero + Sobre mim -->
+        <section class="hero" id="top">
+            <div class="hero__media" role="img" aria-label="Imagem de capa"></div>
+
+            <div class="container">
+                <article class="card about" id="about">
+                    <div class="about__photo">
+                        <img src="images/foto2.jpg" alt="Foto de Leandro de Oliveira Custódio" width="260" height="260">
+                    </div>
+
+                    <div class="about__text">
+                        <p class="eyebrow">Desenvolvedor · Back-end &amp; Games</p>
+                        <h1>Leandro de Oliveira Custódio <span aria-hidden="true">📌</span></h1>
+
+                        <p>Olá, me chamo Leandro Custódio e sou um programador com forte interesse em arte. Há algum tempo, venho aprimorando meus conhecimentos e habilidades, tanto em tecnologia quanto nas áreas artísticas. Tenho mais de um ano de experiência no mercado de trabalho como estagiário, atuando na empresa BTG Pactual, onde participei ativamente de diversos projetos, desde a implementação de APIs para web scraping até a manutenção de sistemas robustos em Spring Boot e Node.js.</p>
+
+                        <p>Minha principal linguagem de programação é Java, que foi a que mais utilizei tanto no ambiente corporativo quanto em projetos acadêmicos. Além disso, já trabalhei com Python e JavaScript em diversos projetos. Embora minha experiência principal seja em Back-end, também tenho grande interesse em Front-end, tendo criado sites e dashboards para projetos acadêmicos, pessoais e até mesmo para o BTG.</p>
+
+                        <p>Meu objetivo principal é atuar no mercado de desenvolvimento de jogos. Tive a oportunidade de participar de alguns projetos bem-sucedidos na faculdade e atualmente estou desenvolvendo dois projetos próprios nessa área. Além disso, sou apaixonado por arte 2D, modelagem 3D e game design.</p>
+
+                        <div class="about__actions">
+                            <a class="btn" href="https://www.linkedin.com/in/leandro-custodio/" target="_blank" rel="noopener">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                            </a>
+                            <a class="btn btn--ghost" href="https://github.com/ImOutOfBounds" target="_blank" rel="noopener">
+                                <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <div class="icons">
-            <img src="images/bootstrap.png">
-            <div class="content">
-                <h3>Bootstrap</h3>
+        <!-- Contato -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="heading">Con<span>tato</span> <span aria-hidden="true">📱</span></h2>
+
+                <div class="grid grid--cards">
+                    <a class="card card--hover contact-card" href="tel:+5511982334655">
+                        <span class="card__icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+                        <h3>Telefone</h3>
+                        <p>(11) 98233-4655</p>
+                    </a>
+
+                    <a class="card card--hover contact-card" href="mailto:leandro.oliveiracustodio02@gmail.com">
+                        <span class="card__icon"><i class="fas fa-at" aria-hidden="true"></i></span>
+                        <h3>E-mail</h3>
+                        <p>leandro.oliveiracustodio02@gmail.com</p>
+                    </a>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="icons">
-            <img src="images/javascript.png">
-            <div class="content">
-                <h3>JavaScript</h3>
+        <!-- Formações -->
+        <section class="section" id="formations">
+            <div class="container">
+                <h2 class="heading">For<span>mações</span> <span aria-hidden="true">🎓</span></h2>
+
+                <div class="grid grid--cards">
+                    <div class="card card--hover">
+                        <span class="card__icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+                        <h3>Ciências da Computação</h3>
+                        <p>2022 – 2025 · Inteli</p>
+                    </div>
+
+                    <div class="card card--hover">
+                        <span class="card__icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+                        <h3>Programação em Java</h3>
+                        <p>2021 · Instituto PROA</p>
+                    </div>
+
+                    <div class="card card--hover">
+                        <span class="card__icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+                        <h3>ETIM Edificações</h3>
+                        <p>2018 – 2020 · Etec Itaquera II</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
+        <!-- Tecnologias -->
+        <section class="section section--alt" id="tecnology">
+            <div class="container">
+                <h2 class="heading">Tec<span>nologias</span> <span aria-hidden="true">💻</span></h2>
 
-        <div class="icons">
-            <img src="images/php.png">
-            <div class="content">
-                <h3>PHP</h3>
+                <ul class="grid grid--tech">
+                    <li class="tech"><img src="images/html.png" alt="" loading="lazy" width="48" height="48"><span>HTML</span></li>
+                    <li class="tech"><img src="images/css.png" alt="" loading="lazy" width="48" height="48"><span>CSS</span></li>
+                    <li class="tech"><img src="images/bootstrap.png" alt="" loading="lazy" width="48" height="48"><span>Bootstrap</span></li>
+                    <li class="tech"><img src="images/javascript.png" alt="" loading="lazy" width="48" height="48"><span>JavaScript</span></li>
+                    <li class="tech"><img src="images/php.png" alt="" loading="lazy" width="48" height="48"><span>PHP</span></li>
+                    <li class="tech"><img src="images/mysql.png" alt="" loading="lazy" width="48" height="48"><span>MySQL</span></li>
+                    <li class="tech"><img src="images/sass.png" alt="" loading="lazy" width="48" height="48"><span>Sass</span></li>
+                    <li class="tech"><img src="images/react.png" alt="" loading="lazy" width="48" height="48"><span>React</span></li>
+                    <li class="tech"><img src="images/java.png" alt="" loading="lazy" width="48" height="48"><span>Java</span></li>
+                    <li class="tech"><img src="images/godot.png" alt="" loading="lazy" width="48" height="48"><span>Godot</span></li>
+                    <li class="tech"><img class="is-mono" src="images/unity.png" alt="" loading="lazy" width="48" height="48"><span>Unity</span></li>
+                    <li class="tech"><img class="is-mono" src="images/github.png" alt="" loading="lazy" width="48" height="48"><span>GitHub</span></li>
+                </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="icons">
-            <img src="images/mysql.png">
-            <div class="content">
-                <h3>Mysql</h3>
+        <!-- Projetos -->
+        <section class="section" id="projects">
+            <div class="container">
+                <h2 class="heading">Pro<span>jetos</span> <span aria-hidden="true">👨‍💻</span></h2>
+                <div class="grid grid--projects projects_section" id="projects-list" aria-live="polite"></div>
             </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="site-footer__title">Redes Sociais <span aria-hidden="true">📨</span></p>
+
+            <ul class="social-icons">
+                <li>
+                    <a href="https://github.com/ImOutOfBounds" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/leandro-custodio/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <p class="copyright">Leandro Custódio &copy; Todos os direitos reservados</p>
         </div>
-
-        <div class="icons">
-            <img src="images/sass.png">
-            <div class="content">
-                <h3>Sass</h3>
-            </div>
-        </div>
-
-        <div class="icons">
-            <img src="images/react.png">
-            <div class="content">
-                <h3>React</h3>
-            </div>
-        </div>
-
-        <div class="icons">
-            <img src="images/java.png">
-            <div class="content">
-                <h3>Java</h3>
-            </div>
-        </div>
-
-        <div class="icons">
-            <img src="images/godot.png">
-            <div class="content">
-                <h3>Godot</h3>
-            </div>
-        </div>
-
-        <div class="icons">
-            <img class="unity" src="images/unity.png">
-            <div class="content">
-                <h3>Unity</h3>
-            </div>
-        </div>
-
-        <div class="icons">
-            <img class="unity" src="images/github.png">
-            <div class="content">
-                <h3>Github</h3>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- Seção projetos -->
-    <h1 class="heading" id="projects">Pro<span>jetos</span>👨‍💻</h1>
-
-    <section class="projects_section">
-    </section>
-    
-    
-
-    <footer>
-        <span></span>
-        
-        <p>Redes Sociais📨</p>
-        
-        <div class="social-icons">
-            <a href="https://github.com/ImOutOfBounds"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/leandro-custodio/"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p class="copyright">Leandro Custódio Oficial | Todos os Direitos Reservados &copy</p>
     </footer>
-    
-    <script src="./javaScript/dark.js"></script>
-    <script src="./javaScript/script.js"></script>
 
-    
+    <script src="./javaScript/dark.js" defer></script>
+    <script src="./javaScript/script.js" defer></script>
 </body>
 </html>
